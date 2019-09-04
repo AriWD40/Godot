@@ -1,0 +1,20 @@
+		
+    
+    
+    
+    
+    
+    
+    
+    
+    
+func _physics_process(delta):
+	update()
+	sprite.rotate(delta)
+    
+    if Input.is_key_pressed(KEY_F):
+      var transform = sprite.get_transform().affine_inverse()
+
+      sprite.material.set_shader_param("first", transform[0])
+      sprite.material.set_shader_param("second", transform[1])
+		
